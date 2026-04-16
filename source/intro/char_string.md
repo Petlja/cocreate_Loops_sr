@@ -1,19 +1,20 @@
-# Characters and strings
 
-Understanding how characters and strings are represented will help you to
-handle text correctly in the following lesson, ensuring proper data processing.
+# Карактери и стрингови
 
-The character data type, commonly referred to as char, is used to represent
-individual characters. Since computers can only store binary values, characters
-must be encoded as numbers. In modern computer systems, either ASCII or Unicode
-encoding schemes are used. Older programming languages (e.g., C) typically rely
-on ASCII, while modern languages (e.g., C#) support Unicode.
+Разумевање како су карактери и стрингови представљени помоћи ће ти да исправно
+обрађујеш текст у наредној лекцији и обезбедићеш правилну обраду података.
+
+Тип података за карактере, познат као char, користи се за представљање појединачних карактера.
+Пошто рачунари могу да чувају само бинарне вредности, карактери морају бити кодирани као бројеви.
+У савременим рачунарским системима користе се ASCII или Unicode шеме кодирања.
+Старији програмски језици (нпр. C) обично користе ASCII, док модерни језици (нпр. C#) подржавају Unicode.
+
 
 ## ASCII
 
-ASCII *(American Standard Code for Information Interchange)* is a 7-bit binary
-code, represented in memory with 8 bits (one byte). It defines 128 characters,
-including letters, digits, punctuation marks, and control characters:
+ASCII *(American Standard Code for Information Interchange)* је 7-битни бинарни
+код, који се у меморији представља са 8 бита (један бајт). Дефинише 128 карактера,
+укључујући слова, цифре, знакове интерпункције и контролне карактере:
 
 ```text
 DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH
@@ -52,13 +53,13 @@ DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH
 31  37  1F  US    63  77  3F  ?     95  137 5F  _     127 177 7F  DEL
 ```
 
+
 ## Unicode
 
-Unicode is an extended character set that includes all ASCII codes as its first
-part. In Unicode, the first 128 code values (U+0000 to U+007F) are completely
-identical to ASCII codes. Beyond that, Unicode defines more than 150,000
-characters from writing systems around the world. For example, the specific
-Latin characters of the Serbian alphabet are defined like this...
+Unicode је проширени скуп карактера који укључује све ASCII кодове као свој први део.
+У Unicode-у, првих 128 вредности кода (U+0000 до U+007F) су потпуно идентичне ASCII кодовима.
+Поред тога, Unicode дефинише више од 150.000 карактера из писама широм света.
+На пример, специфична латинична слова српске абецеде дефинисана су овако...
 
 | Code   | Symbol | DEC     |
 |--------|--------|---------|
@@ -73,7 +74,8 @@ Latin characters of the Serbian alphabet are defined like this...
 | U+017D | Ž      | 381     |
 | U+017E | ž      | 382     |
 
-...Latin letters written with two characters are defined like this...
+
+...Латинична слова која се пишу са два карактера дефинисана су овако...
 
 | Code   | Symbol | DEC     |
 |--------|--------|---------|
@@ -87,7 +89,8 @@ Latin characters of the Serbian alphabet are defined like this...
 | U+01CB | ǋ      | 459     |
 | U+01CC | ǌ      | 460     |
 
-...and the Cyrillic characters of the Serbian alphabet are defined like this:
+
+...а ћирилична слова српске абецеде дефинисана су овако:
 
 | Code   | Symbol | DEC     |
 |--------|--------|---------|
@@ -152,17 +155,14 @@ Latin characters of the Serbian alphabet are defined like this...
 | U+045F | џ      | 1119    |
 | U+0448 | ш      | 1096    |
 
-Although some Latin and Cyrillic letters appear to be the same, their Unicode
-code values are different. For example, the Latin capital letter A is encoded
-as U+0041, while the Cyrillic capital letter A is encoded as U+0410.
 
-## Strings
+Иако нека латинична и ћирилична слова изгледају исто, њихове Unicode вредности су различите.
+На пример, латинично велико слово A је кодирано као U+0041, док је ћирилично велико слово А кодирано као U+0410.
 
-A string is a sequence of characters arranged in a specific order. Each
-character can be a letter, digit, punctuation mark, whitespace, or symbol.
-Strings are fundamental in computing because they represent text, file names,
-user input, and much more.
 
-A string is typically represented as a contiguous block of memory. Some systems
-terminate strings with a special marker like a null character `'\0'` to
-indicate the end, while others may store the length explicitly.
+## Стрингови
+
+Стринг је низ карактера поређаних у одређеном редоследу. Сваки карактер може бити слово, цифра, знак интерпункције, празнина или симбол.
+Стрингови су основни у рачунарству јер представљају текст, имена фајлова, унос корисника и још много тога.
+
+Стринг се обично представља као континуални блок меморије. Неки системи завршавају стрингове посебним маркером као што је null карактер `'\0'` да означе крај, док други могу експлицитно чувати дужину.

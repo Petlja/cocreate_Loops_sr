@@ -1,31 +1,28 @@
-# Conditions and loops
 
-To successfully master the material in the next lesson, it is necessary to know
-the basic facts about working with conditions and loops.
+# Услови и петље
 
-## Conditions
+Да би успешно савладао/ла материјал у наредној лекцији, потребно је да знаш основне чињенице о раду са условима и петљама.
 
-In most modern programming languages, conditional statements are used to make
-decisions and control the flow of a program. The most common constructs are:
+## Услови
+
+У већини савремених програмских језика, условне наредбе се користе за доношење одлука и контролу тока програма. Најчешће конструкције су:
 
 * if
 * if-else
 * switch-case
 
-Although the syntax differs between languages, the core logic is the same.
+Иако се синтакса разликује између језика, основна логика је иста.
 
-### The `if` Statement
+### Наредба `if`
 
-The `if` statement executes a block of code only if a specified condition is
-true.
+Наредба `if` извршава блок кода само ако је задати услов испуњен (тачан).
 
 ```text
 if condition then
     statement(s)
 ```
 
-For example, in C, C++, C#, and Java, if you want check if `x` is greater than
-`0` the conditional statement can be written as:
+На пример, у C, C++, C# и Java, ако желиш да провериш да ли је `x` веће од `0`, условна наредба може се написати овако:
 
 ```csharp
 int x = 5;
@@ -34,10 +31,9 @@ if (x > 0) {
 }
 ```
 
-### The `if-else` Statement
+### Наредба `if-else`
 
-The if-else statement executes one block of code if the condition is true, and
-another block if it is false.
+Наредба if-else извршава један блок кода ако је услов испуњен, а други блок ако није.
 
 ```text
 if condition then
@@ -46,8 +42,7 @@ else
     statement(s)
 ```
 
-For example, in C, C++, C#, and Java, if you want check if `x` is greater than
-`0` or not greater than `0`, the conditional statement can be written as:
+На пример, у C, C++, C# и Java, ако желиш да провериш да ли је `x` веће од `0` или није, условна наредба може се написати овако:
 
 ```csharp
 int x = 5;
@@ -58,11 +53,9 @@ if (x > 0) {
 }
 ```
 
-### The `switch-case` Statement
+### Наредба `switch-case`
 
-The `switch-case` statement is useful when comparing the same variable against
-many possible values. It can be more readable than using many `if-else`
-statements.
+Наредба `switch-case` је корисна када се једна иста променљива пореди са више могућих вредности. Ова конструкција може бити прегледнија од више `if-else` наредби.
 
 ```text
 switch expression do
@@ -75,9 +68,7 @@ switch expression do
         statement(s)
 ```
 
-For example, in C, C++, C#, and Java, if you want to determine the name of the
-day based on its ordinal number in the week, the conditional statement can be
-written as:
+На пример, у C, C++, C# и Java, ако желиш да одредиш име дана на основу његовог редног броја у недељи, условна наредба може се написати овако:
 
 ```csharp
 int day = 3;
@@ -99,38 +90,31 @@ switch (day) {
 }
 ```
 
-### Nesting conditions
+### Угнежђавање услова
 
-Conditional statements can be placed inside other conditional statements - this
-is called **nesting**. Nested conditions are useful when a decision depends on
-the result of a previous decision. For example, you might first check if a user
-is logged in, and then, inside that block, check if they have permission to
-perform a certain action.
+Условне наредбе могу бити постављене једна унутар друге – то се зове **угнежђавање**. Угнежђени услови су корисни када одлука зависи од резултата претходне одлуке. На пример, можеш прво проверити да ли је корисник пријављен, а затим у том блоку проверити да ли има дозволу да изврши одређену радњу.
 
-## Loops
+## Петље
 
-In most modern programming languages, loops are usually implemented using one
-of the following constructs:
+У већини савремених програмских језика, петље се обично реализују помоћу неке од следећих конструкција:
 
 * `for`,
-* `while` (or `while-do`),
-* `do-while` (or `repeat-until`),
-* `foreach` (or `for-each`).
+* `while` (или `while-do`),
+* `do-while` (или `repeat-until`),
+* `foreach` (или `for-each`).
 
-Although the syntax differs between languages, the core logic is the same.
+Иако се синтакса разликује између језика, основна логика је иста.
 
-### The `for` Loop
+### Петља `for`
 
-The `for` loop is used when the number of iterations is finite and
-predetermined.
+Петља `for` се користи када је број понављања коначан и унапред познат.
 
 ```text
 for variable ← start to end do
     statement(s)
 ```
 
-For example, in C, C++, C#, and Java, a `for` loop to iterate through numbers
-from 0 to 9 can be written as:
+На пример, у C, C++, C# и Java, `for` петља за пролазак кроз бројеве од 0 до 9 може се написати овако:
 
 ```csharp
 for (int i = 0; i <= 9; i++) {
@@ -138,19 +122,16 @@ for (int i = 0; i <= 9; i++) {
 }
 ```
 
-### The `while` Loop
+### Петља `while`
 
-The `while` (or `while-do`) loop is used when the number of iterations is
-unknown in advance. The condition is checked before each iteration, so this
-is called a **loop with a precondition**.
+Петља `while` (или `while-do`) се користи када број понављања није познат унапред. Услов се проверава пре сваке итерације, па се ова петља зове **петља са предусловом**.
 
 ```text
 while condition do
     statement(s)
 ```
 
-For example, in C, C++, C#, and Java, a `while` loop to iterate through numbers
-from 0 to 9 can be written as:
+На пример, у C, C++, C# и Java, `while` петља за пролазак кроз бројеве од 0 до 9 може се написати овако:
 
 ```csharp
 int i = 0;
@@ -160,11 +141,9 @@ while (i <= 9) {
 }
 ```
 
-### The `do-while` Loop
+### Петља `do-while`
 
-The `do-while` (or `repeat-until`) loop also supports an unknown number of
-iterations, but the condition is checked after each iteration. This is called a
-**loop with a postcondition**, and it always executes at least once.
+Петља `do-while` (или `repeat-until`) такође подржава непознат број понављања, али се услов проверава након сваке итерације. Ово је **петља са постусловом** и увек се извршава бар једном.
 
 ```text
 repeat
@@ -172,8 +151,7 @@ repeat
 until condition
 ```
 
-For example, in C, C++, C#, and Java, a `do-while` loop to iterate through
-numbers from 0 to 9 can be written as:
+На пример, у C, C++, C# и Java, `do-while` петља за пролазак кроз бројеве од 0 до 9 може се написати овако:
 
 ```csharp
 int i = 0;
@@ -183,19 +161,17 @@ do {
 } while (i <= 9);
 ```
 
-### The `foreach` Loop
 
-The `foreach` (or `for-each`) loop is used to iterate over all elements in a
-collection or array. It simplifies iteration when you don’t need to know the
-index.
+### Петља `foreach`
+
+Петља `foreach` (или `for-each`) се користи за пролазак кроз све елементе у колекцији или низу. Ова петља поједностављује итерацију када ти није битан индекс.
 
 ```text
 for-each element in collection do
     statement(s)
 ```
 
-For example, a `for-each` loop to iterate through array `nums` can be written
-in C++ as:
+На пример, `for-each` петља за пролазак кроз низ `nums` може се написати у C++ овако:
 
 ```cpp
 int nums[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -204,7 +180,7 @@ for (int i : nums) {
 }
 ```
 
-...or in C# as...
+...или у C# овако...
 
 ```csharp
 int[] nums = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -213,7 +189,7 @@ foreach (int i in nums) {
 }  
 ```
 
-...or in Java as:
+...или у Java овако:
 
 ```java
 int[] nums = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -222,13 +198,6 @@ for (int i : nums) {
 }   
 ```
 
-### Nesting loops
+### Угнежђавање петљи
 
-Loops can also be nested, meaning that one loop is placed inside another. This
-is common when working with multi-dimensional data, such as traversing rows and
-columns in a matrix or iterating over a grid in a game. Furthermore, loops and
-conditions can be freely combined — for example, a loop may contain an `if`
-statement to process only certain elements, or an `if` statement may contain a
-loop to perform repeated actions when a condition is true. This ability to mix
-and nest loops and conditions allows for the creation of complex algorithms
-while keeping the underlying logic structured.
+Петље такође могу бити угнежђене, што значи да се једна петља налази унутар друге. Ово је често када се ради са вишедимензионалним подацима, као што је пролазак кроз редове и колоне у матрици или итерација по мрежи у игри. Поред тога, петље и услови се могу слободно комбиновати — на пример, петља може садржати `if` наредбу да би се обрадили само одређени елементи, или `if` наредба може садржати петљу за понављање радњи када је услов испуњен. Ова могућност комбиновања и угнежђавања петљи и услова омогућава креирање сложених алгоритама, а да логика остане прегледна.

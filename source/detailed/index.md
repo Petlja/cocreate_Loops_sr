@@ -1,7 +1,8 @@
 ---
 status: exclude
 ---
-# Detailed
+
+# Детаљније
 
 ```{toctree}
 :maxdepth: 2

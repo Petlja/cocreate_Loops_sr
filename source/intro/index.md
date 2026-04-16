@@ -1,10 +1,11 @@
 ---
 status: exclude
 ---
-# Introduction
+# Увод
 
 ```{toctree}
 :maxdepth: 2
+:caption: Увод
 
 pair_programming
 collaboration
