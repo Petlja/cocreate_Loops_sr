@@ -21,7 +21,7 @@ will_learn:
     - Ксор (XOR)
 
 needed: 
-    - A basic personal computer system with Internet access. Optionally, a computer system with specific programming language IDE.
+    - Основни лични рачунар са приступом интернету. Опционо, рачунар са инсталираним развојним окружењем за одређени програмски језик.
 
 useful:
     - Microsoft C++, C, and Assembler documentation: https://learn.microsoft.com/en-us/cpp/
