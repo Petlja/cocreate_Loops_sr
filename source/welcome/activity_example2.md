@@ -1,6 +1,7 @@
-# Example Lecture 2
 
-This is another example lecture in English.
+# Пример лекције 2
 
-Use this space to add more sample content, explanations, or exercises for your course.
+Ово је још једна пример лекција на српском језику.
+
+Искористите овај простор да додате још примера садржаја, објашњења или задатака за свој курс.
 

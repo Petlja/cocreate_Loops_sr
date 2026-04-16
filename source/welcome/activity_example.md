@@ -1,17 +1,18 @@
-# Example Lecture
 
-Welcome to this example lecture!
+# Пример лекције
 
-This is a sample lesson to demonstrate how course content can be structured. You can use this template to add your own text, code examples, images, or exercises.
+Добродошли у ову пример лекцију!
 
-## Section Title
+Ово је пример лекције који показује како може бити организован садржај курса. Овај шаблон можете користити да додате свој текст, примере кода, слике или задатке.
 
-Add your content here. For example, you can explain a concept, provide instructions, or include a code block:
+## Наслов секције
+
+Овде додајте свој садржај. На пример, можете објаснити неки појам, дати упутства или укључити блок кода:
 
 ```python
-print("Hello, world!")
+print("Здраво, светe!")
 ```
 
-## Exercise
+## Вежба
 
-Try editing this lecture or adding new sections to practice creating course materials.
+Пробајте да измените ову лекцију или додате нове секције како бисте увежбавали креирање материјала за курс.
