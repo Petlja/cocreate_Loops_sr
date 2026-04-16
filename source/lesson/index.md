@@ -1,10 +1,12 @@
 ---
 status: exclude
 ---
-# Lesson
+
+# Лекција
 
 ```{toctree}
 :maxdepth: 2
+:caption: Лекција
 
 cryptography
 caesar

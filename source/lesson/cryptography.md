@@ -1,101 +1,63 @@
-# A Very Short Introduction to Cryptography
 
-Since ancient times, when people began to write, there has been a need to keep
-some written text secret. By devising techniques to hide recorded information,
-a new scientific field emerged – cryptography.
+# Врло кратак увод у криптографију
 
-> **Cryptography** is a scientific discipline that deals with the development
-> of systems for encrypting information. The word cryptography comes from the
-> Greek words kryptós (*hidden, secret*) and graphein (*to write*).
+Још од давнина, када су људи почели да пишу, постојала је потреба да се неки писани текст сакрије. Развијањем техника за скривање забележених информација, појавила се нова научна област – криптографија.
 
-In India, 2000-year-old writings speak of two types of encryption – the first
-type was based on the substitution of letters based on their phonetic
-relationships, and the second on a coded alphabet by pairing letters and using
-reciprocal letters. In Persia, modern-day Iran, there were also two types of
-encryption – the first royal script was used for official correspondence within
-the kingdom, and the second for communication with other states.
+> **Криптографија** је научна дисциплина која се бави развојем система за шифровање информација. Реч криптографија потиче од грчких речи κρυπτός (*скривен, тајан*) и γράφειν (*писати*).
 
-The first book on cryptography, entitled "The Book of Cryptographic Messages"
-according to historical sources, was written by the Arab philosopher Al-Khalil
-(717–786), in which permutations and combinations are used for the first time
-to list all Arabic words with and without vowels. However, classical encryption
-methods often reveal statistical patterns about the original message, which can
-be exploited to break the cipher.
 
-![Kindi's manuscript on deciphering cryptographic messages](./images/kindi.jpg)
+У Индији, списи стари 2000 година говоре о две врсте шифровања – прва је била заснована на замени слова на основу њихових фонетских односа, а друга на шифрованој азбуци удруживањем слова и коришћењем реципрочних слова. У Персији, данашњем Ирану, такође су постојале две врсте шифровања – прво краљевско писмо коришћено је за званичну преписку унутар краљевства, а друго за комуникацију са другим државама.
 
-After the discovery of frequency analysis of letters in a message, the Arab
-mathematician Al-Kindi wrote the book "Manuscript for the Decipherment of
-Cryptographic Messages" in the ninth century, in which the use of frequency
-analysis techniques was first described.
 
-> **Cryptanalysis** is the scientific discipline that studies methods for
-> "breaking" cryptographic systems. The word cryptanalysis comes from the Greek
-> words kryptós (*hidden, secret*) and analýein (*analysis*).
+Прву књигу о криптографији, под називом „Књига о шифрованим порукама“, према историјским изворима, написао је арапски филозоф Ал-Халил (717–786), у којој се први пут користе пермутације и комбинације за набрајање свих арапских речи са и без самогласника. Међутим, класичне методе шифровања често откривају статистичке обрасце о изворној поруци, што се може искористити за разбијање шифре.
 
-The first known treatise on cryptography was written in 25 pages by the Italian
-architect Leone Battista Alberti in 1467. He is also the creator of the cipher
-circle and other solutions for double-layered text concealment. Half a century
-later, Johannes Trithemus' work on cryptography was published in five volumes.
-In the 16th century, significant contributions were made by the Milanese doctor
-Girolamo Cardano, the mathematician Battista Porta, and the French diplomat
-Blaise de Vigenere.
 
-![XVI Century Book-shaped French Cipher Machine](./images/cyphermachine.jpg)
+![Киндијев рукопис о дешифровању шифрованих порука](./images/kindi.jpg)
 
-In the 19th century, it was concluded that cryptography should not rely on the
-secrecy of the encryption algorithms, but on the secrecy of the key. The
-secrecy of the key itself must be sufficient to prevent the encrypted message
-from being broken. This became one of the fundamental principles of
-cryptography, written down in 1883 by Auguste Kerckhoffs (Kerckhoffs's
-Principle). More explicitly, it was reiterated by Claude Shannon, the founder
-of Information Theory and a key figure in theoretical cryptography, as
-Shannon's Maxim: "the enemy knows the system".
 
-During World War II, the Germans built a machine called the Enigma that
-encrypted messages in a way never seen before. However, as revolutionary as it
-was at the time, the Allies, led by Alan Turing, were able to break the Enigma
-cryptographic system through cryptanalysis.
+Након открића фреквенцијске анализе слова у поруци, арапски математичар Ал-Кинди је у деветом веку написао књигу „Рукопис за дешифровање шифрованих порука“, у којој је први пут описана употреба техника фреквенцијске анализе.
 
-![Enigma](./images/enigma.jpg)
 
-Cryptography and cryptanalysis are the two main disciplines of cryptology.
+> **Криптоанализа** је научна дисциплина која проучава методе за „разбијање“ криптографских система. Реч криптоанализа потиче од грчких речи κρυπτός (*скривен, тајан*) и αναλύειν (*анализирати*).
 
-> **Cryptology** is the science that deals with various aspects of information
-> security. The word cryptology comes from the Greek words kryptós (*hidden,
-> secret*) and logos (*science*).
 
-## Present
+Први познати трактат о криптографији написао је на 25 страна италијански архитекта Леоне Батиста Алберти 1467. године. Он је и творац шифровачког круга и других решења за двослојно скривање текста. Половином века касније, дело Јоханеса Тритемија о криптографији објављено је у пет томова. У 16. веку значајан допринос дали су милански лекар Ђироламо Кардано, математичар Батиста Порта и француски дипломата Блез де Виженер.
 
-After World War II, with the development of information technology, cryptology
-and its scientific disciplines became increasingly important. Modern computers
-can break simple ciphers at incredible speeds, so cryptographic algorithms have
-become much more advanced. Today, cryptography is generally divided into
-**symmetric** encryption, where the same key is used for both encryption and
-decryption...
 
-![Symmetric encryption](./images/symmetric.png)
+![Француска шифровачка машина у облику књиге из XVI века](./images/cyphermachine.jpg)
 
-...and **asymmetric** encryption, where a pair of public and private keys is
-used:
 
-![Asymmetric encryption](./images/asymmetric.png)
+У 19. веку је закључено да криптографија не треба да се ослања на тајност алгоритама за шифровање, већ на тајност кључа. Тајност самог кључа мора бити довољна да спречи разбијање шифроване поруке. Ово је постало једно од основних начела криптографије, које је 1883. записао Огист Керкхофс (Керкхофсов принцип). Још експлицитније, поновио га је Клод Шенон, оснивач теорије информација и кључна личност теоријске криптографије, као Шенонову максиму: „непријатељ зна систем“.
 
-Another essential tool is the cryptographic hash function, which creates a
-unique digital fingerprint of data and is widely used in password protection,
-digital signatures, and blockchain technology.
 
-## The Future
+Током Другог светског рата, Немци су направили машину звану Енигма која је шифровала поруке на до тада невиђен начин. Међутим, колико год да је у то време била револуционарна, савезници на челу са Аланом Тјурингом успели су да разбију Енигма криптографски систем криптоанализом.
 
-Looking ahead, quantum cryptography is expected to become a foundation of
-secure communication. It is based on the Heisenberg uncertainty principle of
-quantum physics. However, quantum computing also poses a threat to many
-cryptographic algorithms in use today, which has led to the development of
-post-quantum cryptography.
 
-![Google Quantum AI](./images/google.jpg)
+![Енигма](./images/enigma.jpg)
 
-The importance of cryptology in modern society cannot be overstated.
-Cryptographic systems ensure the privacy of electronic communications,
-enable secure e-commerce, protect cryptocurrencies, and in some countries
-even safeguard electronic voting and vote counting.
+
+Криптографија и криптоанализа су две главне дисциплине криптологије.
+
+> **Криптологија** је наука која се бави различитим аспектима безбедности информација. Реч криптологија потиче од грчких речи κρυπτός (*скривен, тајан*) и λόγος (*наука*).
+
+
+## Садашњост
+
+После Другог светског рата, са развојем информационих технологија, криптологија и њене научне дисциплине постају све значајније. Савремени рачунари могу да разбију једноставне шифре невероватном брзином, па су криптографски алгоритми постали много напреднији. Данас се криптографија углавном дели на **симетрично** шифровање, где се исти кључ користи и за шифровање и за дешифровање...
+
+![Симетрично шифровање](./images/symmetric.png)
+
+...и **асиметрично** шифровање, где се користи пар јавног и приватног кључа:
+
+![Асиметрично шифровање](./images/asymmetric.png)
+
+Још један важан алат је криптографска хеш функција, која ствара јединствени дигитални отисак података и широко се користи у заштити лозинки, дигиталним потписима и блокчејн технологији.
+
+
+## Будућност
+
+Гледајући унапред, очекује се да ће квантна криптографија постати темељ безбедне комуникације. Она се заснива на Хајзенберговом принципу неодређености у квантној физици. Међутим, квантно рачунарство представља и претњу за многе криптографске алгоритме који се данас користе, што је довело до развоја постквантне криптографије.
+
+![Гугл Квантум АИ](./images/google.jpg)
+
+Значај криптологије у савременом друштву је немерљив. Криптографски системи обезбеђују приватност електронске комуникације, омогућавају безбедну електронску трговину, штите криптовалуте, а у неким државама чак обезбеђују електронско гласање и бројање гласова.
