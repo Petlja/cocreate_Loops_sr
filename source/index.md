@@ -6,10 +6,12 @@ lang: sr-Cyrl
 short_description: Увод у криптографију са петљама
 long_description: >
     <p>У овом курсу ћеш научити како да користиш петље над карактерима и стринговима за имплементацију основних криптографских алгоритама и зашто је то важно.</p>
+    
+    <p>Ovaj kurs je napravljen u okviru Erasmus+ projekta <a rel="license" href="https://erasmus-cocreate.petlja.org">CoCreate - Computer-Supported Collaborative Learning for Inclusive Education</a>
+    </p>
     <p>
-    <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">
-    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
-    <br>Овај курс је објавила Фондација Петља под <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>.
+
+    <br>This course was published by Petlja Foundation under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>.
     </p>
 
 will_learn:
