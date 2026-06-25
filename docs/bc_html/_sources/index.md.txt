@@ -1,37 +1,50 @@
 ﻿---
 status: exclude
-alias: PLCT_Template
-short_description: Short course description
+alias: Loops_and_Cryptography_sr
+lang: sr-Cyrl
+
+short_description: Увод у криптографију са петљама
 long_description: >
-    <p>This course will introduce you ...</p>
+    <p>У овом курсу ћеш научити како да користиш петље над карактерима и стринговима за имплементацију основних криптографских алгоритама и зашто је то важно.</p>
     <p>
     <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">
     <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
-    <br>This course was published by Petlja Foundation under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>.
+    <br>Овај курс је објавила Фондација Петља под <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>.
     </p>
+
 will_learn:
-    - What will you learn?
+    - Основе услова и петљи (подсетник)
+    - Основе карактера и стрингова (подсетник)
+    - Историјат криптографије и њен значај у савременом свету
+    - Цезаров шифарник
+    - Скиталу
+    - Ксор (XOR)
 
 needed: 
-    - A personal computer with an up-to-date version of *Windows 11* operating system
+    - Основни лични рачунар са приступом интернету. Опционо, рачунар са инсталираним развојним окружењем за одређени програмски језик.
+
 useful:
-    - Python 3.12 documentation: https://docs.python.org/3.12/
+    - Microsoft C++, C, and Assembler documentation: https://learn.microsoft.com/en-us/cpp/
+    - The GNU C Reference Manual: https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html
+    - Sharp language documentation: https://learn.microsoft.com/en-us/dotnet/csharp/
+    - Python language documentation: https://docs.python.org/3/
 ---
 
-# Data Analysis - Visualization
 
-You are about to start an introductory course ......
+# Петље и криптографија
 
-Course author: Petlja Foundation
+Почињеш уводну лекцију о петљама над карактерима и стринговима
+за имплементацију основних криптографских алгоритама.
 
-This course is published by Petlja Foundation under the
+Аутор курса: Фондација Петља
+
+Овај курс је објавила Фондација Петља под
 [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.sr_LATN).
-
 
 ```{toctree}
 :maxdepth: 2
-:caption: Contents
+:caption: Садржај
 :hidden:
 
-welcome/index
-detailed/index
+intro/index
+lesson/index

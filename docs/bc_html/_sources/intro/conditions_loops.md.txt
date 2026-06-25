@@ -5,15 +5,6 @@
 
 Хајде да се подсетимо неких основа! Ако ти и даље ова област не буде јасна, прођи кроз лекцију на Петљи баш томе посвећену.
 
-Линк на Петљину лекцију о петљама је [овде](https://www.petlja.org/sr-Latn-RS/kurs/477/12/5844)
-<!--Link za verzije kursa koje nisu na sprskokm https://petlja.org/en/biblioteka/r/lekcije/python-za-svakog/01_karel_eng_02_for -->
-
-```{learnmorenote} За наставнике
-
-Link na Petljinu lekciju na srpskom https://www.petlja.org/sr-Latn-RS/kurs/477/12/5844
-Link za verzije kursa koje nisu na sprskokm https://petlja.org/en/biblioteka/r/lekcije/python-za-svakog/01_karel_eng_02_for
-```
-
 ## Услови
 
 У већини савремених програмских језика, условне наредбе се користе за доношење одлука и контролу тока програма. Најчешће конструкције су:

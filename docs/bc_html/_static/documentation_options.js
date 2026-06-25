@@ -1,7 +1,7 @@
 var DOCUMENTATION_OPTIONS = {
     URL_ROOT: document.getElementById("documentation_options").getAttribute('data-url_root'),
     VERSION: '',
-    LANGUAGE: 'sr-Latn',
+    LANGUAGE: 'sr-Cyrl',
     COLLAPSE_INDEX: false,
     BUILDER: 'plct_builder',
     FILE_SUFFIX: '.html',

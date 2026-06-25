@@ -1,7 +1,8 @@
-﻿# About the Course
+﻿
+# О курсу
 
-Welcome to the demo course!
+Добродошли на демо курс!
 
-This is a sample "About the Course" lecture. Here you can provide a brief overview of the course, its objectives, and what students can expect to learn.
+Ово је пример лекције „О курсу“. Овде можете дати кратак преглед курса, његове циљеве и шта ученици могу да очекују да науче.
 
-Feel free to customize this section with more details about the course structure, prerequisites, and any other important information for your learners.
+Слободно прилагодите овај део са више детаља о структури курса, предусловима и свим другим важним информацијама за ваше полазнике.

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Цезарова шифра &#8212; PLCT Template</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=213c783b" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=6b89569b"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Скитала" href="skytale.html" />
+    <link rel="prev" title="Увод у историју криптографије и важност криптографије у савременом свету" href="cryptography.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Цезарова шифра<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Један од великих војсковођа који је користио шифроване поруке био је Јулије Цезар, око 50. године пре нове ере. Када је Цезар слао поруке својим генералима, шифровао их је тако што је слова у тексту померао за одређени број места у азбуци. Примаоци поруке су могли да је дешифрују јер су знали вредност помераја — док су сви остали видели само бесмислен текст.</p>
+<p>На пример, ако напишеш <code class="docutils literal notranslate"><span class="pre">NIKOLATESLA</span></code> и свако слово помериш три места удесно:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
+</pre></div>
+</div>
+<p>Слово <code class="docutils literal notranslate"><span class="pre">N</span></code> постаје <code class="docutils literal notranslate"><span class="pre">K</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code> постаје <code class="docutils literal notranslate"><span class="pre">F</span></code> и тако даље. Дакле, свако слово се замењује другим словом које је одређени број позиција даље у азбуци. Када се дође до краја азбуке, наставља се од почетка. Резултат померања за три слова удесно је шифрована порука <code class="docutils literal notranslate"><span class="pre">KFHLIXQBPIX</span></code>. Са друге стране, ако свако слово у добијеној речи помериш три слова улево:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+</pre></div>
+</div>
+<p>Слово <code class="docutils literal notranslate"><span class="pre">K</span></code> постаје <code class="docutils literal notranslate"><span class="pre">N</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code> постаје <code class="docutils literal notranslate"><span class="pre">I</span></code> и тако даље. Резултат овог померања је оригинална дешифрована порука <code class="docutils literal notranslate"><span class="pre">NIKOLATESLA</span></code>.</p>
+<p><img alt="Caesar Cipher Left Shift" src="../_images/caesar1.png" /></p>
+<section id="id2">
+<h2>Задатак за размишљање<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Размисли како би направио конзолну апликацију у било ком програмском језику која ће шифровати и дешифровати поруке користећи Цезарову шифру. Дати су неки савети. Кд их прочиташ имаћеш простор да унесеш шифру.</p>
+
+    <div class="note-wrapper infonote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
+        <div class="course-content">
+            
+<p>Први ученик (<em>возач</em>) треба да се фокусира на синтаксу док пише код за шифровање поруке. Други ученик (<em>навигатор</em>) треба да прегледа сваки ред кода док се куца, тражи грешке, поставља питања и предлаже побољшања. Након тога, ученици мењају улоге и настављају са писањем кода за дешифровање.</p>
+
+    </div></div>
+<p>Дозвољена азбука за поруке (и за отворени и за шифровани текст) може да садржи само мала слова енглеске абецеде:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Σ = { a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z }
+</pre></div>
+</div>
+<p>Размаци, велика слова, бројеви и други знакови нису дозвољени.</p>
+<p>У првој линији улаза налази се порука <code class="docutils literal notranslate"><span class="pre">m</span></code> дужине највише сто карактера, у другој линији цео број <code class="docutils literal notranslate"><span class="pre">n</span></code> који представља вредност помераја (<span class="math notranslate nohighlight">\(1 \leq n &lt; 26\)</span>), а у трећој линији цео број <code class="docutils literal notranslate"><span class="pre">s</span></code> који представља смер шифровања. Ако је <span class="math notranslate nohighlight">\(s=1\)</span>, онда треба шифровати <code class="docutils literal notranslate"><span class="pre">m</span></code>, а ако је $s=2<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">онда</span> <span class="pre">треба</span> <span class="pre">дешифровати</span> </code>m`.</p>
+<section id="id3">
+<h3>Тест пример 1<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>Ако је улаз:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nikolatesla
+3
+1
+</pre></div>
+</div>
+<p>излаз треба да буде:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>kfhlixqbpix
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Тест пример 2<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>Ако је улаз:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>kfhlixqbpix
+3
+2
+</pre></div>
+</div>
+<p>излаз треба да буде:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nikolatesla
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>Уради задатак<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://arena.petlja.org/sr-Latn-RS/competition/123-co-create#tab_142923">Имплементирај шифру овде</a></p>
+</section>
+<section id="id6">
+<h2>Савети за решење<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<p>Пошто енглеска абецеда има 26 слова, позиција сваког слова може се представити бројем од 0 до 25.</p>
+<ul class="simple">
+<li><p>a → 0</p></li>
+<li><p>b → 1</p></li>
+<li><p>c → 2</p></li>
+<li><p>…</p></li>
+<li><p>z → 25</p></li>
+</ul>
+<p>Да би се <strong>шифровало</strong> слово, можеш користити следећу формулу:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>new_letter_position = (current_letter_position + shift_value) mod 26
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">original_position</span></code> представља нумеричку вредност слова у азбуци, <code class="docutils literal notranslate"><span class="pre">shift_value</span></code> представља број позиција за померај (1–25), а <code class="docutils literal notranslate"><span class="pre">mod</span> <span class="pre">26</span></code> обезбеђује да се резултат врати на почетак азбуке ако пређе слово <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+<p>Да би се <strong>дешифровало</strong> слово, можеш користити следећу формулу:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>new_letter_position = (current_letter_position - shift_value + 26) mod 26
+</pre></div>
+</div>
+<p>Слично као код шифровања, али се вредност помераја одузима, а <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">26</span></code> обезбеђује да вредност не постане негативна пре примене <code class="docutils literal notranslate"><span class="pre">mod</span> <span class="pre">26</span></code>.</p>
+</section>
+<section id="id7">
+<h2>Сложенији задаци са Цезаровом шифром (опционо)<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
+<section id="id8">
+<h3>Прошири дозвољену азбуку<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<p>Направи конзолну апликацију у било ком програмском језику која ће шифровати и дешифровати поруке користећи Цезарову шифру. Дозвољена азбука за поруке (и за отворени и за шифровани текст) може да садржи мала и велика слова енглеске абецеде, размаке, бројеве и знакове интерпункције!</p>
+<p>Апликација треба да шифрује или дешифрује само мала и велика слова. Размаци, бројеви и знакови интерпункције треба да остану непромењени током шифровања или дешифровања.</p>
+<p>У првој линији улаза налази се порука <code class="docutils literal notranslate"><span class="pre">m</span></code> дужине највише сто карактера, у другој линији цео број <code class="docutils literal notranslate"><span class="pre">n</span></code> који представља вредност помераја (<span class="math notranslate nohighlight">\(1 \leq n &lt; 26\)</span>), а у трећој линији цео број <code class="docutils literal notranslate"><span class="pre">s</span></code> који представља смер шифровања. Ако је <span class="math notranslate nohighlight">\(s=1\)</span>, онда треба шифровати <code class="docutils literal notranslate"><span class="pre">m</span></code>, а ако је $s=2<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">онда</span> <span class="pre">треба</span> <span class="pre">дешифровати</span> </code>m`.</p>
+</section>
+</section>
+<section id="id9">
+<h2>Користи функције<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
+<p>Направи две функције: једну за шифровање порука и једну за дешифровање порука. Користи направљене функције у главном програму.</p>
+<p>Овде можете радити у пару - једна особа треба да шифрује поруку, а друга да је дешифрује!</p>
+</section>
+<section id="id10">
+<h2>Направи класу<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
+<p>Направи класу <code class="docutils literal notranslate"><span class="pre">CaesarCipher</span></code> која садржи:</p>
+<ul class="simple">
+<li><p>конструктор са параметром који прихвата вредност помераја и обезбеђује да је вредност у дозвољеном опсегу,</p></li>
+<li><p>приватно својство за чување вредности помераја, са getter и setter методама,</p></li>
+<li><p>јавну методу за шифровање поруке,</p></li>
+<li><p>јавну методу за дешифровање поруке и</p></li>
+<li><p>опционално, приватну методу за обраду порука коју користе обе методе.</p></li>
+</ul>
+<p>Користи направљену класу у главном програму.</p>
+</section>
+<section id="id11">
+<h2>Прихвати аргументе командне линије<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h2>
+<p>Уместо чекања на унос корисника, направи конзолну апликацију која прихвата следеће аргументе командне линије:</p>
+<ol class="arabic simple">
+<li><p>аргумент <code class="docutils literal notranslate"><span class="pre">m</span></code> за поруку,</p></li>
+<li><p>аргумент <code class="docutils literal notranslate"><span class="pre">n</span></code> за вредност помераја (<code class="docutils literal notranslate"><span class="pre">0</span></code> до <code class="docutils literal notranslate"><span class="pre">25</span></code>), и</p></li>
+<li><p>аргумент <code class="docutils literal notranslate"><span class="pre">s</span></code> за смер шифровања (<code class="docutils literal notranslate"><span class="pre">1</span></code> за шифровање, <code class="docutils literal notranslate"><span class="pre">2</span></code> за дешифровање).</p></li>
+</ol>
+</section>
+<section id="id12">
+<h2>Шифруј и дешифруј фајлове<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h2>
+<p>Искористи досадашње знање да направиш конзолну апликацију за шифровање и дешифровање текстуалних фајлова. Твоја апликација треба да прихвата следеће аргументе командне линије:</p>
+<ol class="arabic simple">
+<li><p>аргумент <code class="docutils literal notranslate"><span class="pre">m</span></code> за име фајла (или путању),</p></li>
+<li><p>аргумент <code class="docutils literal notranslate"><span class="pre">n</span></code> за вредност помераја (<code class="docutils literal notranslate"><span class="pre">0</span></code> до <code class="docutils literal notranslate"><span class="pre">25</span></code>), и</p></li>
+<li><p>аргумент <code class="docutils literal notranslate"><span class="pre">s</span></code> за смер шифровања (<code class="docutils literal notranslate"><span class="pre">1</span></code> за шифровање, <code class="docutils literal notranslate"><span class="pre">2</span></code> за дешифровање).</p></li>
+</ol>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

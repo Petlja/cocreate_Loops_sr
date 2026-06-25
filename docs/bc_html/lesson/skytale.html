@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Скитала &#8212; PLCT Template</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=213c783b" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=6b89569b"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="XOR" href="xor.html" />
+    <link rel="prev" title="Цезарова шифра" href="caesar.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Скитала<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Скитала (енгл. skytale) је један од најстаријих познатих алата за шифровање, који потиче из старе Грчке око 400. године пре нове ере. То је био једноставан цилиндрични уређај који су Спартанци користили за слање тајних порука током војних похода.</p>
+<p>Трака од пергамента или коже намотавала се око дрвене штапиће (<em>скитала</em>) одређеног пречника. Порука се затим писала дуж штапића. Када се трака одмота, слова изгледају измешано и бесмислено. Прималац је морао да има штапић <strong>истог пречника</strong> да би могао да намота траку и прочита оригиналну поруку.</p>
+<p>Ако желиш да шифрујеш поруку:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>attackatdawn
+</pre></div>
+</div>
+<p>и изабереш штапић који омогућава <strong>4 слова по обиласку</strong>, прво пишеш поруку вертикално у колоне, формирајући редове дужине 4:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>a t t a
+c k a t
+d a w n
+</pre></div>
+</div>
+<p>Шифровани текст се затим добија читањем по редовима:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>acdtkatawatn
+</pre></div>
+</div>
+<p>Да би дешифровао поруку, прималац поново намотава траку око штапића истог пречника и чита вертикално да би реконструисао оригиналну поруку.</p>
+<section id="id2">
+<h2>Први задатак<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Направи конзолну апликацију у било ком програмском језику која ће шифровати и дешифровати поруке користећи Скитала шифру.</p>
+<p>Дозвољена азбука за поруке садржи само мала слова енглеске абецеде:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Σ = { a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z }
+</pre></div>
+</div>
+<p>Размаци, велика слова, бројеви и други знакови нису дозвољени!</p>
+<p>У првој линији улаза налази се порука <code class="docutils literal notranslate"><span class="pre">m</span></code> дужине највише сто карактера. У другој линији се налази цео број <code class="docutils literal notranslate"><span class="pre">k</span></code> (број колона – обим штапића). У трећој линији се налази цео број <code class="docutils literal notranslate"><span class="pre">s</span></code> који представља операцију. Ако је <span class="math notranslate nohighlight">\(s=1\)</span>, онда треба шифровати <code class="docutils literal notranslate"><span class="pre">m</span></code>. Ако је <span class="math notranslate nohighlight">\(s=2\)</span>, онда треба дешифровати <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
+<section id="id3">
+<h3>Тест пример 1<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>Ако је улаз:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>attackatdawn
+4
+1
+</pre></div>
+</div>
+<p>излаз треба да буде:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>acdtkatawatn
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Тест пример 2<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>Ако је улаз:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>acdtkatawatn
+4
+2
+</pre></div>
+</div>
+<p>излаз треба да буде:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>attackatdawn
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>Започни задатак<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://arena.petlja.org/sr-Latn-RS/competition/123-co-create#tab_142946">Имплементирај шифру овде</a></p>
+</section>
+<section id="id6">
+<h2>Савети за решење<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<p>За <strong>шифровање</strong>, пиши отворени текст вертикално у табелу са <code class="docutils literal notranslate"><span class="pre">k</span></code> колона. Читај табелу по редовима да добијеш шифровани текст. За <strong>дешифровање</strong>, пиши шифровани текст по редовима у табелу са <code class="docutils literal notranslate"><span class="pre">k</span></code> колона, а затим читај табелу вертикално да реконструишеш отворени текст.</p>
+</section>
+<section id="id7">
+<h2>Сложенији задаци са Скитала шифром (опционо)<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
+<section id="id8">
+<h3>Прошири дозвољену азбуку<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<p>Укључи велика слова, размаке, бројеве и знакове интерпункције.</p>
+</section>
+<section id="id9">
+<h3>Користи функције<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<p>Направи функције <code class="docutils literal notranslate"><span class="pre">encrypt()</span></code> и <code class="docutils literal notranslate"><span class="pre">decrypt()</span></code> да би код био модуларан.</p>
+</section>
+<section id="id10">
+<h3>Направи класу<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<p>Имплементирај класу <code class="docutils literal notranslate"><span class="pre">SkytaleCipher</span></code> која чува <code class="docutils literal notranslate"><span class="pre">k</span></code> и пружа методе за шифровање и дешифровање.</p>
+</section>
+<section id="id11">
+<h3>Шифруј и дешифруј фајлове<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<p>Измени програм тако да чита отворени или шифровани текст из фајла и резултат уписује у други фајл.</p>
+</section>
+<section id="id12">
+<h3>Обради непотпуне редове<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
+<p>Измени програм тако да, ако је последњи ред краћи од <code class="docutils literal notranslate"><span class="pre">k</span></code>, и даље исправно шифрује и дешифрује, обрађујући недостајуће карактере или додајући попуну.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

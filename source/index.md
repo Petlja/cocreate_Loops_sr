@@ -22,6 +22,7 @@ will_learn:
 
 needed: 
     - Основни лични рачунар са приступом интернету. Опционо, рачунар са инсталираним развојним окружењем за одређени програмски језик.
+    - Три школска часа
 
 useful:
     - Microsoft C++, C, and Assembler documentation: https://learn.microsoft.com/en-us/cpp/
