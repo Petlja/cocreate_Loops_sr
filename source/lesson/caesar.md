@@ -1,55 +1,48 @@
+# Cezarova šifra
 
-# Цезарова шифра
+Jedan od velikih vojskovođa koji je koristio šifrovane poruke bio je Julije Cezar, oko 50. godine pre nove ere. Koristio je jednostavnu šifru poznatu kao Cezarova šifra da zaštiti vojne komunikacije. Ova šifra pomera svako slovo za određeni broj mesta u abecedi.
 
-Један од великих војсковођа који је користио шифроване поруке био је Јулије Цезар, око 50. године пре нове ере. Када је Цезар слао поруке својим генералима, шифровао их је тако што је слова у тексту померао за одређени број места у азбуци. Примаоци поруке су могли да је дешифрују јер су знали вредност помераја — док су сви остали видели само бесмислен текст.
-
-На пример, ако напишеш `NIKOLATESLA` и свако слово помериш три места удесно:
+Na primer, ako napišeš `NIKOLATESLA` i pomeriš svako slovo tri mesta ulevo:
 
 ```text
 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
 ```
 
+Slovo `N` postaje `K`, `I` postaje `F` i tako dalje. Dakle, svako slovo se zamenjuje drugim slovom koje je na određenoj udaljenosti u abecedi.
 
-Слово `N` постаје `K`, `I` постаје `F` и тако даље. Дакле, свако слово се замењује другим словом које је одређени број позиција даље у азбуци. Када се дође до краја азбуке, наставља се од почетка. Резултат померања за три слова удесно је шифрована порука `KFHLIXQBPIX`. Са друге стране, ако свако слово у добијеној речи помериш три слова улево:
+**Dešifrovanje** radi isto, ali obrnuto. Da bi dešifrovao šifrat, pomeri svako slovo nazad tri mesta udesno:
 
 ```text
 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
 ```
 
-
-Слово `K` постаје `N`, `F` постаје `I` и тако даље. Резултат овог померања је оригинална дешифрована порука `NIKOLATESLA`.
+Slovo `K` postaje `N`, `F` postaje `I` i tako dalje. Rezultat ovog pomeranja je originalna dešifrovana poruka `NIKOLATESLA`.
 
 ![Caesar Cipher Left Shift](./images/caesar1.png)
 
+## Zadatak za razmišljanje
 
-## Задатак за размишљање
-
-Размисли како би направио конзолну апликацију у било ком програмском језику која ће шифровати и дешифровати поруке користећи Цезарову шифру. Дати су неки савети. Када их прочиташ пробај да направиш конзолну апликацију у развојном окружењу које користите на часовима програмирања.
-
+Razmisli kako bi napravio konzolnu aplikaciju u bilo kom programskom jeziku koja će šifrovati i dešifrovati poruke koristeći Cezarovu šifru.
 
 ```{infonote}
-Први ученик (*возач*) треба да се фокусира на синтаксу док пише код за шифровање поруке. Други ученик (*навигатор*) треба да прегледа сваки ред кода док се куца, тражи грешке, поставља питања и предлаже побољшања. Након тога, ученици мењају улоге и настављају са писањем кода за дешифровање.
+Prvi učenik (*vozač*) treba da se fokusira na sintaksu dok piše kod za šifrovanje poruke. Drugi učenik (*navigator*) treba da prati kod, predlaže poboljšanja i postavlja pitanja. Nakon šifrovanja, zamenite uloge da biste dešifrovali.
 ```
 
-
-Дозвољена азбука за поруке (и за отворени и за шифровани текст) може да садржи само мала слова енглеске абецеде:
+Dozvoljena azbuka za poruke (i za otvoreni i za šifrovani tekst) može da sadrži samo mala slova engleske abecede:
 
 ```text
 Σ = { a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z }
 ```
 
+Razmaci, velika slova, brojevi i drugi znakovi nisu dozvoljeni.
 
-Размаци, велика слова, бројеви и други знакови нису дозвољени.
+U prvoj liniji ulaza nalazi se poruka `m` dužine najviše sto karaktera, u drugoj liniji ceo broj `n` koji predstavlja vrednost pomeraja (1–25), a u trećoj liniji ceo broj `s` koji predstavlja smer šifrovanja. Ako je `s=1`, poruka treba da bude šifrovana, a ako je `s=2`, treba da bude dešifrovana.
 
+### Test primer 1
 
-У првој линији улаза налази се порука `m` дужине највише сто карактера, у другој линији цео број `n` који представља вредност помераја ($1 \leq n < 26$), а у трећој линији цео број `s` који представља смер шифровања. Ако је $s=1$, онда треба шифровати `m`, а ако је $s=2`, онда треба дешифровати `m`.
-
-
-### Тест пример 1
-
-Ако је улаз:
+Ako je ulaz:
 
 ```text
 nikolatesla
@@ -57,17 +50,15 @@ nikolatesla
 1
 ```
 
-
-излаз треба да буде:
+izlaz treba da bude:
 
 ```text
 kfhlixqbpix
 ```
 
+### Test primer 2
 
-### Тест пример 2
-
-Ако је улаз:
+Ako je ulaz:
 
 ```text
 kfhlixqbpix
@@ -75,16 +66,15 @@ kfhlixqbpix
 2
 ```
 
-
-излаз треба да буде:
+izlaz treba da bude:
 
 ```text
 nikolatesla
 ```
 
-## Савети за решење
+## Saveti za rešavanje
 
-Пошто енглеска абецеда има 26 слова, позиција сваког слова може се представити бројем од 0 до 25.
+Pošto engleska abeceda ima 26 slova, pozicija svakog slova može se predstaviti brojem od 0 do 25.
 
 * a → 0
 * b → 1
@@ -92,71 +82,64 @@ nikolatesla
 * ...
 * z → 25
 
-
-Да би се **шифровало** слово, можеш користити следећу формулу:
-
-```text
-new_letter_position = (current_letter_position + shift_value) mod 26
-```
-
-
-`original_position` представља нумеричку вредност слова у азбуци, `shift_value` представља број позиција за померај (1–25), а `mod 26` обезбеђује да се резултат врати на почетак азбуке ако пређе слово `z`.
-
-
-Да би се **дешифровало** слово, можеш користити следећу формулу:
+Da bi se **šifrovalo** slovo, možeš koristiti sledeću formulu:
 
 ```text
 new_letter_position = (current_letter_position - shift_value + 26) mod 26
 ```
 
+`current_letter_position` predstavlja numeričku vrednost slova u azbuci, `shift_value` predstavlja broj pozicija za pomeraj (1–25), `+ 26` obezbeđuje da vrednost ne postane negativna, a `mod 26` obezbeđuje da se vrati na početak abecede.
 
-Слично као код шифровања, али се вредност помераја одузима, а `+ 26` обезбеђује да вредност не постане негативна пре примене `mod 26`.
+Da bi se **dešifrovalo** slovo, možeš koristiti sledeću formulu:
 
+```text
+new_letter_position = (current_letter_position + shift_value) mod 26
+```
 
-## Сложенији задаци са Цезаровом шифром (опционо)
+Slično kao kod šifrovanja, ali se vrednost pomeraja sabira, pa vrednost ne može da postane negativna i `+ 26` nije potreban.
 
-### Прошири дозвољену азбуку
+## Složeniiji zadaci sa Cezarovom šifrom (opciono)
 
-Направи конзолну апликацију у било ком програмском језику која ће шифровати и дешифровати поруке користећи Цезарову шифру. Дозвољена азбука за поруке (и за отворени и за шифровани текст) може да садржи мала и велика слова енглеске абецеде, размаке, бројеве и знакове интерпункције!
+### Proširi dozvoljenu azbuku
 
-Апликација треба да шифрује или дешифрује само мала и велика слова. Размаци, бројеви и знакови интерпункције треба да остану непромењени током шифровања или дешифровања.
+Napravi konzolnu aplikaciju u bilo kom programskom jeziku koja će šifrovati i dešifrovati poruke koristeći Cezarovu šifru, ali sa proširenom azbukom.
 
-У првој линији улаза налази се порука `m` дужине највише сто карактера, у другој линији цео број `n` који представља вредност помераја ($1 \leq n < 26$), а у трећој линији цео број `s` који представља смер шифровања. Ако је $s=1$, онда треба шифровати `m`, а ако је $s=2`, онда треба дешифровати `m`.
+Aplikacija treba da šifruje ili dešifruje samo mala i velika slova. Razmaci, brojevi i znakovi interpunkcije treba da ostanu nepromenjeni.
 
+U prvoj liniji ulaza nalazi se poruka `m` dužine najviše sto karaktera, u drugoj liniji ceo broj `n` (vrednost pomeraja od 1 do 25), a u trećoj liniji ceo broj `s` (1 za šifrovanje, 2 za dešifrovanje).
 
-## Користи функције 
+## Koristi funkcije
 
-Направи две функције: једну за шифровање порука и једну за дешифровање порука. Користи направљене функције у главном програму.
+Napravi dve funkcije: jednu za šifrovanje poruka i jednu za dešifrovanje poruka. Koristi napravljene funkcije u glavnom programu.
 
-Овде можете радити у пару - једна особа треба да шифрује поруку, а друга да је дешифрује!
+Ovde možete raditi u paru — jedna osoba treba da šifruje poruku, a druga da je dešifruje!
 
+## Napravi klasu
 
-## Направи класу
+Napravi klasu `CaesarCipher` koja sadrži:
 
-Направи класу `CaesarCipher` која садржи:
+- konstruktor sa parametrom koji prihvata vrednost pomeraja i obezbeđuje da je vrednost u dozvoljenom opsegu (0–25),
+- privatno svojstvo za čuvanje vrednosti pomeraja, sa getter i setter metodama,
+- javnu metodu za šifrovanje poruke,
+- javnu metodu za dešifrovanje poruke i
+- opciono, privatnu metodu za obradu poruka koju koriste obe metode.
 
-- конструктор са параметром који прихвата вредност помераја и обезбеђује да је вредност у дозвољеном опсегу,
-- приватно својство за чување вредности помераја, са getter и setter методама,
-- јавну методу за шифровање поруке,
-- јавну методу за дешифровање поруке и
-- опционално, приватну методу за обраду порука коју користе обе методе.
+Koristi napravljenu klasu u glavnom programu.
 
-Користи направљену класу у главном програму.
+## Prihvati argumente komandne linije
 
+Umesto čekanja na unos korisnika, napravi konzolnu aplikaciju koja prihvata sledeće argumente komandne linije:
 
-## Прихвати аргументе командне линије
+1. argument `m` za poruku,
+2. argument `n` za vrednost pomeraja (`0` do `25`), i
+3. argument `s` za smer šifrovanja (`1` za šifrovanje, `2` za dešifrovanje).
 
-Уместо чекања на унос корисника, направи конзолну апликацију која прихвата следеће аргументе командне линије:
+## Šifruj i dešifruj fajlove
 
-1. аргумент `m` за поруку,
-2. аргумент `n` за вредност помераја (`0` до `25`), и
-3. аргумент `s` за смер шифровања (`1` за шифровање, `2` за дешифровање).
+Iskoristi dosadašnje znanje da napraviš konzolnu aplikaciju za šifrovanje i dešifrovanje tekstualnih fajlova koristeći Cezarovu šifru.
 
+Aplikacija treba da prihvata sledeće argumente komandne linije:
 
-## Шифруј и дешифруј фајлове
-
-Искористи досадашње знање да направиш конзолну апликацију за шифровање и дешифровање текстуалних фајлова. Твоја апликација треба да прихвата следеће аргументе командне линије:
-
-1. аргумент `m` за име фајла (или путању),
-2. аргумент `n` за вредност помераја (`0` до `25`), и
-3. аргумент `s` за смер шифровања (`1` за шифровање, `2` за дешифровање).
+1. argument `m` za ime fajla (ili putanju),
+2. argument `n` za vrednost pomeraja (`0` do `25`), i
+3. argument `s` za smer šifrovanja (`1` za šifrovanje, `2` za dešifrovanje).
