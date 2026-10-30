@@ -1,18 +1,16 @@
+# Skitala
 
-# Скитала
+Skitala (engl. skytale) je jedan od najstarijih poznatih alata za šifrovanje, koji potiče iz stare Grčke oko 400. godine pre nove ere. Bila je to jednostavna cilindrična naprava koju su Spartanci koristili da šalju tajne poruke tokom vojnog pohoda.
 
-Скитала (енгл. skytale) је један од најстаријих познатих алата за шифровање, који потиче из старе Грчке око 400. године пре нове ере. То је био једноставан цилиндрични уређај који су Спартанци користили за слање тајних порука током војних похода.
+Traka od pergamenta ili kože namotavala se oko drvene šipke (*skytale*) određenog prečnika. Poruka se zatim pisala uzdužno duž namotane trake. Da bi dešifrovao, primalac je ponovo namotavao traku oko šipke istog prečnika i čitao poruku uzdužno, na isti način kao što je i napisao.
 
-Трака од пергамента или коже намотавала се око дрвене штапиће (*скитала*) одређеног пречника. Порука се затим писала дуж штапића. Када се трака одмота, слова изгледају измешано и бесмислено. Прималац је морао да има штапић **истог пречника** да би могао да намота траку и прочита оригиналну поруку.
-
-Ако желиш да шифрујеш поруку:
+Ako želiš da šifruješ poruku:
 
 ```text
 attackatdawn
 ```
 
-
-и изабереш штапић који омогућава **4 слова по обиласку**, прво пишеш поруку вертикално у колоне, формирајући редове дужине 4:
+i izabereš šipku koja omogućava **3 slova po obrtaju**, traka ide oko nje 4 puta. Pišeš poruku duž šipke, red po red, 4 slova po redu (po jedno na svakom obrtaju), formirajući tabelu:
 
 ```text
 a t t a
@@ -20,37 +18,31 @@ c k a t
 d a w n
 ```
 
-
-Шифровани текст се затим добија читањем по редовима:
+Šifrovani tekst se zatim dobija čitanjem kolona po kolone (ovaj je redosled slova na odmotanoj traci):
 
 ```text
 acdtkatawatn
 ```
 
+Da bi dešifrovao poruku, primalac ponovo namotava traku oko šipke istog prečnika i čita red po red da bi rekonstruisao originalnu poruku.
 
-Да би дешифровао поруку, прималац поново намотава траку око штапића истог пречника и чита вертикално да би реконструисао оригиналну поруку.
+## Prvi zadatak
 
+Napravi konzolnu aplikaciju u bilo kom programskom jeziku da šifruješ i dešifruješ poruke koristeći Skitalu.
 
-## Први задатак
-
-Направи конзолну апликацију у било ком програмском језику која ће шифровати и дешифровати поруке користећи Скитала шифру. Користи развојном окружењу које користите на часовима програмирања.
-
-Дозвољена азбука за поруке садржи само мала слова енглеске абецеде:
+Dozvoljena azbuka za poruke sadrži samo mala slova engleske abecede:
 
 ```text
 Σ = { a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z }
 ```
 
+Razmaci, velika slova, brojevi i drugi znakovi nisu dozvoljeni!
 
-Размаци, велика слова, бројеви и други знакови нису дозвољени!
+U prvoj liniji ulaza nalazi se poruka `m` dužine najviše sto karaktera. U drugoj liniji se nalazi ceo broj `k` (broj kolona u tabeli za šifrovanje). U trećoj liniji se nalazi ceo broj `s` (1 za šifrovanje, 2 za dešifrovanje).
 
+### Test primer 1
 
-У првој линији улаза налази се порука `m` дужине највише сто карактера. У другој линији се налази цео број `k` (број колона – обим штапића). У трећој линији се налази цео број `s` који представља операцију. Ако је $s=1$, онда треба шифровати `m`. Ако је $s=2$, онда треба дешифровати `m`.
-
-
-### Тест пример 1
-
-Ако је улаз:
+Ako je ulaz:
 
 ```text
 attackatdawn
@@ -58,17 +50,15 @@ attackatdawn
 1
 ```
 
-
-излаз треба да буде:
+izlaz treba da bude:
 
 ```text
 acdtkatawatn
 ```
 
+### Test primer 2
 
-### Тест пример 2
-
-Ако је улаз:
+Ako je ulaz:
 
 ```text
 acdtkatawatn
@@ -76,36 +66,36 @@ acdtkatawatn
 2
 ```
 
-
-излаз треба да буде:
+izlaz treba da bude:
 
 ```text
 attackatdawn
 ```
 
-## Савети за решење
+## Saveti za rešavanje
 
-За **шифровање**, пиши отворени текст вертикално у табелу са `k` колона. Читај табелу по редовима да добијеш шифровани текст. За **дешифровање**, пиши шифровани текст по редовима у табелу са `k` колона, а затим читај табелу вертикално да реконструишеш отворени текст.
+Za **šifrovanje**, napiši otvoreni tekst red po red u tabelu sa `k` kolona. Čitaj tabelu kolona po kolona da dobiješ šifrat.
 
+Za **dešifrovanje**, napiši šifrat kolona po kolona u tabelu sa `k` kolona (svaka kolona sadrži dužinu poruke podeljenu sa `k` slova), pa čitaj tabelu red po red da rekonstrušeš otvoreni tekst.
 
-## Сложенији задаци са Скитала шифром (опционо)
+## Složeniiji zadaci sa Skitalom (opciono)
 
-### Прошири дозвољену азбуку
+### Proširi dozvoljenu azbuku
 
-Укључи велика слова, размаке, бројеве и знакове интерпункције.
+Uključi velika slova, razmake, brojeve i znakove interpunkcije.
 
-### Користи функције
+### Koristi funkcije
 
-Направи функције `encrypt()` и `decrypt()` да би код био модуларан.
+Napravi funkcije `encrypt()` i `decrypt()` da bi kod bio modularan.
 
-### Направи класу
+### Napravi klasu
 
-Имплементирај класу `SkytaleCipher` која чува `k` и пружа методе за шифровање и дешифровање.
+Implementiraj klasu `SkytaleCipher` koja čuva `k` i pruža metode za šifrovanje i dešifrovanje.
 
-### Шифруј и дешифруј фајлове
+### Šifruj i dešifruj fajlove
 
-Измени програм тако да чита отворени или шифровани текст из фајла и резултат уписује у други фајл.
+Izmeni program tako da čita otvoreni ili šifrovani tekst iz fajla i rezultat upisuje u drugi fajl.
 
-### Обради непотпуне редове
+### Obradi nepotpune redove
 
-Измени програм тако да, ако је последњи ред краћи од `k`, и даље исправно шифрује и дешифрује, обрађујући недостајуће карактере или додајући попуну.
+Izmeni program tako da, ako je poslednji red kraći od `k`, i dalje ispravno šifruje i dešifruje, obrađujući nedostajuća polja na odgovarajući način.
