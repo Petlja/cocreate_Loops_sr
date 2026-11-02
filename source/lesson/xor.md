@@ -102,7 +102,7 @@ nikolatesla
 
 ## Уради задатак
 
-[Имплементирај шифру овде](https://arena.petlja.org/sr-Latn-RS/competition/123-co-create#tab_142947)
+Решење запиши у свеску или у неком документу. 
 
 ## Савети за решење
 
